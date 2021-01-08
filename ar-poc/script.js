@@ -35,20 +35,20 @@ function staticLoadPlaces() {
 
 var models = [
     {
+        url: './assets/articuno/scene.gltf',
+        scale: '0.2 0.2 0.2',
+        rotation: '0 180 0',
+        info: "Don't tempt me ;-)",
+    },
+    {
         url: './assets/magnemite/scene.gltf',
         scale: '0.4 0.4 0.4',
         info: 'Magnemite, Lv. 5, HP 10/10',
         rotation: '0 180 0',
     },
     {
-        url: './assets/articuno/scene.gltf',
-        scale: '0.2 0.2 0.2',
-        rotation: '0 180 0',
-        info: 'Articuno, Lv. 80, HP 100/100',
-    },
-    {
         url: './assets/dragonite/scene.gltf',
-        scale: '0.05 0.05 0.05',
+        scale: '0.005 0.005 0.005',
         rotation: '0 180 0',
         info: 'Dragonite, Lv. 99, HP 150/150',
     },
@@ -56,10 +56,6 @@ var models = [
 
 var modelIndex = 0;
 var setModel = function (model, entity) {
-
-    alert(model.info);
-    alert(entity);
-
 
     if (model.scale) {
         entity.setAttribute('scale', model.scale);
@@ -76,7 +72,6 @@ var setModel = function (model, entity) {
     entity.setAttribute('gltf-model', model.url);
 
     const div = document.querySelector('.instructions');
-    alert(model.info);
     div.innerText = model.info;
 };
 
@@ -94,15 +89,14 @@ function renderPlaces(places) {
 
         model.setAttribute('animation-mixer', '');
 
-        document.querySelector('button[data-action="change"]').addEventListener('click', function () {
-            alert('clicked');
+        // document.querySelector('button[data-action="change"]').addEventListener('click', function () {
 
-            var entity = document.querySelector('[gps-entity-place]');
-            modelIndex++;
-            var newIndex = modelIndex % models.length;
-            alert(model.info);
-            setModel(models[newIndex], entity);
-        });
+        //     var entity = document.querySelector('[gps-entity-place]');
+        //     modelIndex++;
+        //     var newIndex = modelIndex % models.length;
+        //     setModel(models[newIndex], entity);
+        // 
+        // });
 
         scene.appendChild(model);
     });
