@@ -44,7 +44,7 @@ var models = [
         url: './assets/articuno/scene.gltf',
         scale: '0.2 0.2 0.2',
         rotation: '0 180 0',
-        info: "Don't tempt me ;-)",
+        info: 'Do not tempt me ;-)',
     },
     {
         url: './assets/magnemite/scene.gltf',
@@ -95,14 +95,14 @@ function renderPlaces(places) {
 
         model.setAttribute('animation-mixer', '');
 
-        //document.querySelector('button[data-action="change"]').addEventListener('click', function () {
+        document.querySelector('button[data-action="change"]').addEventListener('click', function () {
 
         var entity = document.querySelector('[gps-entity-place]');
         modelIndex++;
         var newIndex = modelIndex % models.length;
         setModel(models[newIndex], entity);
          
-        // });
+         });
 
         scene.appendChild(model);
     });
