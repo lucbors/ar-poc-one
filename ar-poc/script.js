@@ -95,9 +95,12 @@ function renderPlaces(places) {
         model.setAttribute('animation-mixer', '');
 
         document.querySelector('button[data-action="change"]').addEventListener('click', function () {
+            alert('clicked');
+
             var entity = document.querySelector('[gps-entity-place]');
             modelIndex++;
             var newIndex = modelIndex % models.length;
+            alert(model.info);
             setModel(models[newIndex], entity);
         });
 
